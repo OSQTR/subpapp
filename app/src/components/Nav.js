@@ -16,6 +16,8 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
+const navItems[id, path, title] = [[1, "/", Home], [2, "/Rules", Rules],];
+
 function Nav() {
   return (
     <>
