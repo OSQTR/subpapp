@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   color: #555555;
-  margin: 0 16px 0 16px;
+  margin: 80px 16px 0 16px;
 `;
 
 function Home() {

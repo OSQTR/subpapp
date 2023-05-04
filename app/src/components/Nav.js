@@ -20,23 +20,35 @@ const NavItem = styled(NavLink)`
   margin: 10px;
   color: black;
   text-decoration: none;
-  background-color: white;
   border-radius: 5px;
   padding: 5px 10px 5px 10px;
+
+  &.active {
+    background-color: white;
+  }
 `;
 
 const wrapAni = {
-  list: {
+  hidden: {
+    width: "50%",
+    left: "20%",
+  },
+  show: {
+    width: "100%",
+    left: "0",
     transition: {
-      when: "beforeChildren",
+      duration: 0.5,
       staggerChildren: 0.2,
     },
   },
 };
 
 const itemAni = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+  },
 };
 
 const navItems = [
@@ -48,9 +60,9 @@ const navItems = [
 function Nav() {
   return (
     <>
-      <NavWrap variants={wrapAni} animate="list">
+      <NavWrap variants={wrapAni} initial="hidden" animate="show">
         {navItems.map(([id, path, title]) => (
-          <motion.div variants={itemAni} initial="hidden" whileInView="show">
+          <motion.div variants={itemAni}>
             <NavItem id={id} to={path}>
               {title}
             </NavItem>
