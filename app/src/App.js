@@ -3,10 +3,15 @@ import "./App.css";
 import Home from "./components/home";
 import Rules from "./components/Rules";
 import Nav from "./components/Nav";
+import styled from "styled-components";
+
+const AppBody = styled.div`
+  overflow: hidden;
+`;
 
 function App() {
   return (
-    <>
+    <AppBody>
       <BrowserRouter>
         <Nav />
         <Routes>
@@ -14,7 +19,7 @@ function App() {
           <Route path="/rules" element={<Rules />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </AppBody>
   );
 }
 

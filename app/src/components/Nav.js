@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 const NavWrap = styled(motion.div)`
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
+  border-bottom: solid grey 0.5px;
 
   position: fixed;
   top: -1px;
@@ -14,17 +15,23 @@ const NavWrap = styled(motion.div)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 `;
 
 const NavItem = styled(NavLink)`
   margin: 10px;
-  color: black;
+  color: grey;
   text-decoration: none;
   border-radius: 5px;
   padding: 5px 10px 5px 10px;
 
   &.active {
     background-color: white;
+    color: black;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
   }
 `;
 
