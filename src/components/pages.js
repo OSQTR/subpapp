@@ -47,7 +47,7 @@ function Page() {
     <PageBoxCage width={boxWidth}>
       <PageBox
         animate={{
-          width: isOpen ? { displyWidth } : "inherit",
+          width: isOpen ? `${(width = displyWidth)}` : "inherit",
           height: isOpen ? "80vh" : "inherit",
           maxWidth: isOpen ? "none" : "200px",
           maxHeight: isOpen ? "none" : "200px",
